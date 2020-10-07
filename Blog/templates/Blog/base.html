@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Document</title>
+	<link rel="stylesheet"  href="{% static 'Blog/css/bootstrap.css'%}">
+	
+	
+	
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet"  href="{% static 'Blog/css/style.css'%}">
+
+</head>
+<body>
+	<div class="container-fluid bg-dark">
+		{% include 'Blog/navbar.html'%}
+		
+	</div>
+
+	<div class="container">
+<!-- #this block will display the message weather user has loggedin or loggedout successfully or not -->
+		<div class="row">
+			<div class="col-sm-12">
+				{% block msg %}   
+				{% endblock msg%}
+				
+			</div>	
+		</div>
+
+		<div class="row">
+			<!-- we have not defined the number of columns here because that may vary page to page -->
+
+			{% block side %}
+			{% endblock side%} 
+
+			{% block content%}
+			{% endblock content%}
+			
+		</div>
+			
+		
+	</div>
+	<script src="{% static 'Blog/js/jquery.js'%}"></script>
+	<script src="{% static 'Blog/js/popper.js'%}"></script>
+
+    <script src="{% static 'Blog/js/bootstrap.js'%}"></script>
+		
+
+
+</body>
+</html>

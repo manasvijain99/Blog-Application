@@ -1,0 +1,31 @@
+{% extends 'Blog/base.html' %}
+{% load static %}
+
+{% block content %} 
+<!-- #rows already exist in base.html so we directly start making columns here -->
+
+<div class="col-sm-10">
+	<h3 class="text-dark my-5 ">LoginPage</h3>
+	
+	<form method="POST" action="">
+		{% csrf_token%}
+		<!-- {{form.as_p}}  -->
+		<!-- we are making this in form tag because we want to format it further using bootstrap for that we need to add widgets in forms.py -->
+
+
+		{% for fm in form %}  
+		<div class="form-group">
+		    {{fm.label_tag}} {{fm}} 
+        </div>
+		{% endfor %}
+
+		<input type="submit" name="Submit">
+		
+	</form>
+		
+	
+	
+	
+</div>
+
+{% endblock content %}
